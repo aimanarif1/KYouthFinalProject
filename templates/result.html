@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather and Hotel Information</title>
+</head>
+<body>
+    <h1>Weather and Hotel Information for {{ city }}</h1>
+    <h2>Weather:</h2>
+    <p>Temperature: {{ weather.temperature }}</p>
+    <p>Humidity: {{ weather.humidity }}</p>
+    <p>Description: {{ weather.description }}</p>
+
+    <h2>Hotels:</h2>
+    <ul>
+        {% for hotel in hotels %}
+            <li>
+                <strong>Hotel Name:</strong> {{ hotel.name }}<br>
+                <strong>Location ID:</strong> {{ hotel.location_id }}<br>
+                <strong>Address:</strong> {{ hotel.address_obj.address_string }}<br>
+                <strong>Street 1:</strong> {{ hotel.address_obj.street1 }}<br>
+                <strong>Street 2:</strong> {{ hotel.address_obj.street2 }}<br>
+                <strong>City:</strong> {{ hotel.address_obj.city }}<br>
+                <strong>Country:</strong> {{ hotel.address_obj.country }}<br>
+                <strong>Postal Code:</strong> {{ hotel.address_obj.postalcode }}
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+</body>
+</html>
